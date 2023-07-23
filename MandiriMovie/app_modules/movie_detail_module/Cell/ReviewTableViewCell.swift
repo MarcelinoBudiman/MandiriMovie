@@ -20,6 +20,7 @@ class ReviewTableViewCell: UITableViewCell {
     var contentTextView: UILabel = {
         let label = UILabel()
         label.text = "PLACEHOLDER CONTENT"
+        label.numberOfLines = 10
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -29,8 +30,15 @@ class ReviewTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+    }
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     func setupUI() {
@@ -44,6 +52,7 @@ class ReviewTableViewCell: UITableViewCell {
             
             contentTextView.topAnchor.constraint(equalTo: usernameLabel.bottomAnchor, constant: 10),
             contentTextView.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            contentTextView.widthAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.widthAnchor, multiplier: 0.9)
         
         ])
         

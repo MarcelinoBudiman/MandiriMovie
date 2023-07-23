@@ -206,7 +206,7 @@ class MovieDetailViewController: UIViewController {
             tableView.topAnchor.constraint(equalTo: posterImageView.bottomAnchor, constant: 20),
             tableView.centerXAnchor.constraint(equalTo: bottomView.centerXAnchor),
             tableView.widthAnchor.constraint(equalTo: bottomView.widthAnchor),
-            tableView.heightAnchor.constraint(equalTo: bottomView.heightAnchor, multiplier: 2)
+            tableView.heightAnchor.constraint(equalTo: bottomView.heightAnchor, multiplier: 0.65)
         
         ])
         
